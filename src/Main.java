@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner((System.in));
-       Konto konto = new Konto(123456, "Anna", "Kowalska", 1000, 1234);
+
+
+      Konto konto = new Konto(123456, "Anna", "Kowalska", 1000, 1234);
        //Konto konto2 = new Konto(456789, "Jan", "Nowak", 1500, 2345);
        //Konto kont03 = new Konto(789123, "Katarzyna", "Stonoga", 500, 3456);
        //Konto konto3 = new Konto(147852, "Adam", "Szybki", 5000, 4567);
@@ -16,13 +18,22 @@ public class Main {
         int login = scanner.nextInt();
         int pin = scanner.nextInt();
 
-        for (int i = 0; i < konto.getNumerKlienta() + konto.getPin(); i++) {
-            if (login == konto.getNumerKlienta()) ;
+        for (int i = 0; i < konto.getNumerKlienta()+ konto.getPin(); i++) {
+            if (login == konto.getNumerKlienta());
             if (pin == konto.getPin()) {
                 System.out.println("Witaj " + konto.getImie() +  konto.getNazwisko() +" na swoim koncie bankowym");
                 System.out.println("Wybierz: 1-pokaz szczegoly konta, 2-wyplac gotowke, 3-wplac gotowke, 4-wyjscie");
                 break;
             }}
+            if (login !=konto.getNumerKlienta());
+                {
+                System.out.println("Wpisalej bledny login, sprobuj jeszcze raz");
+
+            }
+            if (pin != konto.getPin()); {
+                System.out.println("Wpisales bledny pin, sprobuj jeszcze raz");
+            }
+
             int metoda = scanner.nextInt();
 
             System.out.println("Wybrano opcje "+metoda);
@@ -48,6 +59,7 @@ public class Main {
                     break;
 
                     }
+
             }
 
     }

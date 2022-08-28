@@ -1,5 +1,4 @@
 package src;
-
 public class Konto {
     private int numerKlienta;
     private String imie;
@@ -16,7 +15,6 @@ public class Konto {
         this.pin = pin;
     }
 
-    )
 
     public int getNumerKlienta() {
         return numerKlienta;
