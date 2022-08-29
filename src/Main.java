@@ -8,8 +8,8 @@ public class Main {
 
 
       Konto konto = new Konto(123456, "Anna", "Kowalska", 1000, 1234);
-       //Konto konto2 = new Konto(456789, "Jan", "Nowak", 1500, 2345);
-       //Konto kont03 = new Konto(789123, "Katarzyna", "Stonoga", 500, 3456);
+      //Konto konto1 = new Konto(456789, "Jan", "Nowak", 1500, 2345);
+       //Konto konto2 = new Konto(789123, "Katarzyna", "Stonoga", 500, 3456);
        //Konto konto3 = new Konto(147852, "Adam", "Szybki", 5000, 4567);
 
 
