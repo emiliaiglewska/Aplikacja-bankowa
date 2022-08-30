@@ -6,63 +6,64 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner((System.in));
 
-
-      Konto konto = new Konto(123456, "Anna", "Kowalska", 1000, 1234);
-      //Konto konto1 = new Konto(456789, "Jan", "Nowak", 1500, 2345);
-       //Konto konto2 = new Konto(789123, "Katarzyna", "Stonoga", 500, 3456);
-       //Konto konto3 = new Konto(147852, "Adam", "Szybki", 5000, 4567);
-
-
-
-        System.out.println("Witaj, podaj login oraz pin, aby sie zalogować");
-        int login = scanner.nextInt();
+        System.out.println("Podaj ile nowych kont chcesz dodać?");
+        int iloscNowychKont = scanner.nextInt();
+        Konto[] tablicaNowychKont = new Konto[iloscNowychKont];
+        for (int i = 0; i < tablicaNowychKont.length; i++) {
+            tablicaNowychKont[i] = new Konto();
+            tablicaNowychKont[i].otworzKonto();
+            System.out.println(tablicaNowychKont[i].toString());
+        }
+        System.out.println("Witaj podaj pin aby sie zalogowac");
         int pin = scanner.nextInt();
 
-        for (int i = 0; i < konto.getNumerKlienta()+ konto.getPin(); i++) {
-            if (login == konto.getNumerKlienta());
-            if (pin == konto.getPin()) {
-                System.out.println("Witaj " + konto.getImie() +  konto.getNazwisko() +" na swoim koncie bankowym");
-                System.out.println("Wybierz: 1-pokaz szczegoly konta, 2-wyplac gotowke, 3-wplac gotowke, 4-wyjscie");
-                break;
-            }}
-            if (login !=konto.getNumerKlienta());
-                {
-                System.out.println("Wpisalej bledny login, sprobuj jeszcze raz");
+        for (int i = 0; i < tablicaNowychKont.length; i++) {
+            if (pin == tablicaNowychKont[i].getPin()) {
+                int metoda;
 
-            }
-            if (pin != konto.getPin()); {
-                System.out.println("Wpisales bledny pin, sprobuj jeszcze raz");
-            }
+                do {
+                    System.out.println("Witaj " + tablicaNowychKont[i].getImie() + tablicaNowychKont[i].getNazwisko() + " na swoim koncie bankowym");
+                    System.out.println("Wybierz: 1-pokaz szczegoly konta, 2-wyplac gotowke, 3-wplac gotowke, 4-wyjscie");
 
-            int metoda = scanner.nextInt();
+                    metoda = scanner.nextInt();
+                    System.out.println("Wybrano opcje " + metoda);
 
-            System.out.println("Wybrano opcje "+metoda);
-
-            switch (metoda) {
-                case 1:
-                    System.out.println(konto.getImie() + konto.getNazwisko() + konto.getSaldo());
-                    break;
-                case 2:
-                    System.out.println("Ile chcesz wyplacic");
-                    double gotowka = scanner.nextDouble();
-                    konto.wyplata(gotowka);
-                    System.out.println(konto.getSaldo());
-                    break;
-                case 3:
-                    System.out.println("Ile chcesz wyplacic");
-                    double gotowka1 = scanner.nextDouble();
-                    konto.wplata(gotowka1);
-                    System.out.println(konto.getSaldo());
-                    break;
-                case 4:
-                    System.out.println("Zostales wylogowany");
-                    break;
+                    switch (metoda) {
+                        case 1:
+                            System.out.println(tablicaNowychKont[i].toString());
+                            break;
+                        case 2:
+                            System.out.println("Ile chcesz wyplacic");
+                            double gotowka = scanner.nextDouble();
+                            tablicaNowychKont[i].wyplata(gotowka);
+                            System.out.println(tablicaNowychKont[i].getSaldo());
+                            break;
+                        case 3:
+                            System.out.println("Ile chcesz wyplacic");
+                            double gotowka1 = scanner.nextDouble();
+                            tablicaNowychKont[i].wplata(gotowka1);
+                            System.out.println(tablicaNowychKont[i].getSaldo());
+                            break;
+                        case 4:
+                            System.out.println("Zostales wylogowany");
+                            break;
 
                     }
-
+                } while (metoda != 4);
             }
-
+        }
     }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
